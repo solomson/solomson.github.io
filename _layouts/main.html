@@ -22,27 +22,11 @@
 					Azure and DevOps.<br />
 					<br />
 					<br />
-					
-					 
-					<h4><a href="/about">About</a></h4>
-					
-				  
-					 
-					<h4><a href="/cv/">CV</a></h4>
-					
-				  
-					
-				  
-					 
-					<h4><a href="/">Home</a></h4>
-					
-				  
-					
-				  
-					 
-					<h4><a href="/search/">Search</a></h4>
-					
-				  
+					{% for my_page in site.pages %}
+					{% if my_page.title %} 
+					<h4><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></h4>
+					{% endif %}
+				  {% endfor %}
 				</div>
 			</header>
 
@@ -56,33 +40,12 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2 class="post-title">Home</h2>
+							<h2 class="post-title">{{ page.title }}</h2>
 						</header>
 					</section>
 
 			<div class="post-content">
-				<div class="home">
-
-<p> Scroll through my posts or try the search function.</p>
-
-  <h2 class="page-heading">Posts</h2>
-
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Feb 29, 2020</span>
-
-        <h2>
-          <a class="post-link" href="/info/2020/02/29/about-this-site.html">About this site..</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
-
+				{{ content }}
 				</div>
 
 			</div>

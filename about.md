@@ -1,15 +1,9 @@
 ---
-layout: page
+layout: about
 title: About
-permalink: /about/
+permalink: about
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Near lifelong experience with computers and Microsoft tech. After the boom in open source, cloud and containers, I now embrace the "best of both worlds" in terms of Microsoft vs Linux. I have a background in IT operations, but started my career around developers. Special interest for Azure. Consider myself a good all-rounder, both in terms of technical know-how and at the business level.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+Currently employed at Bouvet ASA with projects for Equinor. In my projects I work with cloud migrations, Kubernetes and Cloud native apps, software development in .NET & Python, IT operations in both Linux and Windows.
