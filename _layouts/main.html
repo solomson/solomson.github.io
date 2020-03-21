@@ -34,9 +34,10 @@
 					<br class="liquid" />
 					{% for my_page in site.pages %}
 					{% if my_page.title %} 
-					<h4><a class="liquid" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></h4>
+					<h4><a class="liquid" id="selected" href="{{ my_page.url | append: "#selected"}}">{{ my_page.title }}</a></h4>
 					{% endif %}
 				  {% endfor %}
+
 				</div>
 				</div>
 			</header>

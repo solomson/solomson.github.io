@@ -120,6 +120,10 @@ input, select, textarea {
 			text-decoration: none;
 		}
 
+		:target {
+			font-weight: bold;
+		}
+
 	strong, b {
 		color: #787878;
 		font-weight: 400;
