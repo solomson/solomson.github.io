@@ -2,10 +2,28 @@
 layout: main
 ---
 
+<style>
+    .ui-resizable-helper { border: 1px dotted gray; }
+    .resizable{display:block; width:1000px; height:2500px; padding:30px; border:2px solid gray; overflow:hidden; position:relative;}
+    iframe{ width:100%; height:100%;
+    }
+    </style>
+    
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css" rel="stylesheet"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script>
+    document.addEventListener('DataPageReady', function (event) {
+    $( ".content" ).resizable({
+    animate: true, animateEasing: 'swing', animateDuration: 500
+    });
+    });
+    </script>
+
 <section id="two">
 
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" width="1000px" height="2500px" src="https://solomson.github.io/online-cv/"></iframe>
+    <div class="resizable">
+        <iframe src="https://solomson.github.io/online-cv/"></iframe>
       </div>
       
 </section>
