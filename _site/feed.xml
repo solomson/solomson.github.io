@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Mar 2020 22:29:48 +0100</pubDate>
-    <lastBuildDate>Sun, 22 Mar 2020 22:29:48 +0100</lastBuildDate>
+    <pubDate>Sun, 22 Mar 2020 22:51:02 +0100</pubDate>
+    <lastBuildDate>Sun, 22 Mar 2020 22:51:02 +0100</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -23,8 +23,8 @@
 &lt;p&gt;You can read more about me &lt;a href=&quot;/about.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sat, 29 Feb 2020 11:43:22 +0100</pubDate>
-        <link>http://localhost:4000/general/2020/02/29/about-this-site.html</link>
-        <guid isPermaLink="true">http://localhost:4000/general/2020/02/29/about-this-site.html</guid>
+        <link>http://localhost:4000/2020/02/about-this-site.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/02/about-this-site.html</guid>
         
         <category>Info</category>
         
