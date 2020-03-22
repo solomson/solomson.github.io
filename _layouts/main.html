@@ -33,7 +33,12 @@
 					<br class="liquid" />
 					<br class="liquid" />
 					{% for my_page in site.pages %}
+					
 					{% if my_page.title %} 
+						{% if my_page.title == "Categories" %} 
+							{% continue %}
+						{% endif %}
+					
 					<h4><a class="liquid" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></h4>
 					{% endif %}
 				  {% endfor %}
