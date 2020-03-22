@@ -19,3 +19,4 @@ github_username:  solomson
 markdown: kramdown
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
