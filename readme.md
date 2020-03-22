@@ -4,3 +4,8 @@ This website is created by combining:
 - Jekyll (blog functionality)
 - iframe fetching my CV (source code in separate repo)
 - Personal edits and content, which you can find by look at the git history
+
+Local dev:
+
+clone this repo
+cd to repo, and type `Jekyll serve`
