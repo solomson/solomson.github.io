@@ -17,3 +17,5 @@ github_username:  solomson
 
 # Build settings
 markdown: kramdown
+plugins:
+  - jekyll-seo-tag
