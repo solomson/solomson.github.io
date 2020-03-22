@@ -130,7 +130,13 @@ input, select, textarea {
 		font-weight: 400;
 	}
 
-
+	.archive-item h1, .archive-item h2, .archive-item h3 {
+		margin: 0 0 0em 0;
+		margin-top: 0px;
+		margin-right: 0px;
+		margin-bottom: 0em;
+		margin-left: 0px;
+	}
 
 	em, i {
 		font-style: italic;
