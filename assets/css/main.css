@@ -1838,6 +1838,10 @@ input, select, textarea {
 		color: transparent;
 	}
 
+	#main.active {
+		margin-left: 7%;
+		
+	}
 
 
 /* Form */
@@ -2733,6 +2737,7 @@ input, select, textarea {
 		max-width: 60em;
 		padding: 7em 4em 4em 4em;
 		width: calc(100% - 35%);
+		transition: 800ms ease;
 	}
 
 		#main > section {
