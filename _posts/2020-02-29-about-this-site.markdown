@@ -3,7 +3,7 @@ layout: post
 title:  "About this site.."
 date:   2020-02-29 11:43:22 +0100
 categories: [General]
-tags: [tag1, tag2]
+tags: [Info]
 ---
 
 Planning to eventually write some articles in one or more of the following areas:

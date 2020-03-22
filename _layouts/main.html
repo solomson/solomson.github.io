@@ -35,7 +35,7 @@
 					{% for my_page in site.pages %}
 					
 					{% if my_page.title %} 
-						{% if my_page.title == "Categories" %} 
+						{% if my_page.title == "Articles by tag" or my_page.title == "Articles by category"   %} 
 							{% continue %}
 						{% endif %}
 					

@@ -1,7 +1,7 @@
 ---
 layout: main
 permalink: /categories/
-title: Categories
+title: Articles by category
 ---
 
 
@@ -13,6 +13,9 @@ title: Categories
     <p></p>
 
     <h2 class="category-head">{{ category_name }}</h2>
+
+    <i class="fas fa-folder-open"></i>
+
     <hr class="tight">
 
     <a name="{{ category_name | slugize }}"></a>
@@ -20,6 +23,19 @@ title: Categories
     <article class="archive-item">
       <h3><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h3>
       {{ post.date | date: "%b %-d, %Y" }}
+
+      {% if post %}
+        {% assign tags = post.tags %}
+      {% else %}
+        {% assign tags = page.tags %}
+      {% endif %}
+    
+    <i class="fas fa-tags" margin-left="1%"></i> 
+      {% for tag in tags %}
+      <a href="{{site.baseurl}}/tags/#{{tag|slugize}}">{{tag}}</a>
+      {% unless forloop.last %}&nbsp;{% endunless %}
+      {% endfor %}
+
     </article>
     {% endfor %}
     <hr class="tight">
