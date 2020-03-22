@@ -65,6 +65,11 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
+hr.tight {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 input, select, textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -110,7 +115,6 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
 		color: #49bf9d;
 		text-decoration: none;
 	}
@@ -125,6 +129,8 @@ input, select, textarea {
 		color: #787878;
 		font-weight: 400;
 	}
+
+
 
 	em, i {
 		font-style: italic;
@@ -271,6 +277,10 @@ input, select, textarea {
 
 		.container.max {
 			width: 100%;
+		}
+
+		.a{
+			text-decoration: none;
 		}
 
 		@media screen and (max-width: 980px) {
@@ -1794,6 +1804,42 @@ input, select, textarea {
 		font-size: 2em;
 	}
 
+
+	#header	.collapsible {
+		background-color: #777;
+		color: white;
+		cursor: pointer;
+		padding: 18px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 15px;
+		}
+
+	#header .toggle-btn {
+		position: relative;
+		left: 83%;
+		top: 5%;
+		margin-bottom: 5%;
+	}
+	
+	#header .toggle-btn span {
+		display:block;
+		width:40px;
+		height:5px;
+		background: #A9A9A9;
+		margin: 5px 0px;
+	}
+
+	
+	#header.active {
+		width: 5%;
+		color: transparent;
+	}
+
+
+
 /* Form */
 
 	form {
@@ -2605,6 +2651,7 @@ input, select, textarea {
 		text-align: right;
 		top: 0;
 		width: 18%;
+		transition: 800ms ease;
 	}
 
 		#header > * {
@@ -2682,9 +2729,9 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		margin-left: 25%;
+		margin-left: 20%;
 		max-width: 60em;
-		padding: 8em 4em 4em 4em;
+		padding: 7em 4em 4em 4em;
 		width: calc(100% - 35%);
 	}
 

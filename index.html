@@ -21,6 +21,12 @@ title: Home
     {% for post in site.posts %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        {% assign categories = post.categories %}
+           in
+        {% for category in categories %}
+        <a href="{{site.baseurl}}/categories/#{{category|slugize}}"> {{category}}</a>
+        {% unless forloop.last %}&nbsp;{% endunless %}
+        {% endfor %}
 
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

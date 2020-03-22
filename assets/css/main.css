@@ -65,6 +65,11 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
+hr.tight {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 input, select, textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;

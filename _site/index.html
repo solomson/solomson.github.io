@@ -4,6 +4,8 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
+
 <html>
 	<head>
 		<title>Audun L. Solemdal -  </title>
@@ -15,34 +17,47 @@
 
 		<!-- Header -->
 			<header id="header">
+				<div class="toggle-btn" onclick="toggleHeader()">
+				<span></span>
+				<span></span>
+				<span class="margin"></span>
+			</div>
 				<div class="inner">
+					<div id="collapse">
 					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-					<h1><strong>I am Audun</strong></h1> <br />
-					I work in the realms of<br />
-					Azure and DevOps.<br />
+					<h1><strong class="liquid">I am Audun</strong></h1> <br />
+					<p class="liquid">I work in the realms of
+					Azure and DevOps.
+					</p>
 					<br />
-					<br />
+					<br class="liquid" />
+					<br class="liquid" />
 					
 					 
-					<h4><a href="/about">About</a></h4>
-					
-				  
-					 
-					<h4><a href="/cv/">CV</a></h4>
-					
-				  
+					<h4><a class="liquid" href="/about">About</a></h4>
 					
 				  
 					 
-					<h4><a href="/">Home</a></h4>
+					<h4><a class="liquid" href="/categories/">Categories</a></h4>
+					
+				  
+					 
+					<h4><a class="liquid" href="/external-cv">CV</a></h4>
 					
 				  
 					
 				  
 					 
-					<h4><a href="/search/">Search</a></h4>
+					<h4><a class="liquid" href="/">Home</a></h4>
 					
 				  
+					
+				  
+					
+				  
+					
+				  
+				</div>
 				</div>
 			</header>
 
@@ -65,15 +80,29 @@
 
 <p> Scroll through my posts or try the search function.</p>
 
+<!-- HTML elements for search -->
+<input type="text" id="search-input" placeholder="Search blog posts..">
+<ul id="results-container"></ul>
+
+<!-- or without installing anything -->
+<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
+
+
   <h2 class="page-heading">Posts</h2>
 
   <ul class="post-list">
     
       <li>
         <span class="post-meta">Feb 29, 2020</span>
+        
+           in
+        
+        <a href="/categories/#General"> General</a>
+        
+        
 
         <h2>
-          <a class="post-link" href="/info/2020/02/29/about-this-site.html">About this site..</a>
+          <a class="post-link" href="/general/2020/02/29/about-this-site.html">About this site..</a>
         </h2>
       </li>
     
@@ -97,8 +126,8 @@
 						<li><a href="mailto:audunlsolemdal@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						<li><a href="/" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
 					</ul>
-					<ul class="copyright">
-						<li>by Audun L. Solemdal</li>
+					<ul class="copyright" >
+						<li class="liquid">by Audun L. Solemdal</li><li class="liquid"></li>
 					</ul>
 				</div>
 			</footer>
@@ -110,6 +139,8 @@
 			<script src="/assets/js/breakpoints.min.js"></script>
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
+			<script src="/assets/js/sidebar.js"></script>
+			<script src="/assets/js/search.js"></script>
 
 	</body>
 </html>
