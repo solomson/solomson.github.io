@@ -138,6 +138,10 @@ input, select, textarea {
 		margin-left: 0px;
 	}
 
+	.blocker {
+		display: inline-block;
+	}
+
 	em, i {
 		font-style: italic;
 	}

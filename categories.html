@@ -6,15 +6,16 @@ title: Articles by category
 
 
 <div id="archives">
-{% for category in site.categories %}
-  <div class="archive-group">
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <div id="#{{ category_name | slugize }}"></div>
-    <p></p>
+  {% for category in site.categories %}
+    <div class="archive-group">
+      {% capture category_name %}{{ category | first }}{% endcapture %}
+      <div id="#{{ category_name | slugize }}"></div>
+      <i class="fas fa-folder-open" word-wrap: break-word;> &nbsp;</i> 
+  
+      <div class= "blocker" word-wrap: break-word;>
+        <h2 class="category-head">{{ category_name }} &nbsp;</h2>
+      </div>
 
-    <h2 class="category-head">{{ category_name }}</h2>
-
-    <i class="fas fa-folder-open"></i>
 
     <hr class="tight">
 

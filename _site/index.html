@@ -115,6 +115,62 @@
   <ul class="post-list">
     
       <li>
+        <span class="post-meta">Apr 13, 2020</span>
+        
+           in
+        
+        <a href="/categories/#Windows"> Windows</a>
+        
+        
+
+        <h2>
+          <a class="post-link" href="/2020/04/productivity-on-windows-p2.html">Increasing productivity on Windows 10, part 2 - Choclatey package manager</a>
+        </h2>
+        <p><p>Welcome to the second part of this series on productivity in Windows 10.</p>
+
+<p>For this part we’ll be looking at how to install packaged programs via the command line in Windows.</p>
+
+<p>To begin, open up at Powershell prompt as admin <code class="highlighter-rouge">Win + X + A</code>
+Paste in the following:
+<code class="highlighter-rouge">Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</code></p>
+
+<p>This will install chocolatey on your system in a one-liner.</p>
+
+<p><strong>Word of caution before you proceed</strong> - if you already have some of the programs installed through an MSI or another installer, you may face issues starting the program. The best course of action is then to uninstall either the chocolatey package or the installed program through “Add or Remove programs”.</p>
+
+<p>Also note that many of the packages chocolatey hosts are unofficial. In theory you could believe you are installing something “safe” and well known product, but there are no guarantees for this in non-official packages.</p>
+
+<p>Next, try to find a program you wish to install. 
+You can find this either with Google, searching on chocolatey.org or using the <code class="highlighter-rouge">choco find &lt;packagename&gt;</code> command</p>
+
+<p>Let’s install google chrome.</p>
+
+<p><code class="highlighter-rouge">choco install googlechrome -y</code></p>
+
+<p>Let’s list our installed chocolatey packages <code class="highlighter-rouge">choco list --local-only</code></p>
+
+<p>This works great when bootstrapping new client machines. Say you wish to have a list of programs installed with the latest versions on your machine. Create a script which runs choco install and takes a list of programs to install.</p>
+
+<p>To update your package, type <code class="highlighter-rouge">choco update &lt;packagename&gt;</code> 
+To update all your installed packages, type <code class="highlighter-rouge">choco update all</code></p>
+ </p>
+
+      
+    
+    <i class="fas fa-tags"></i> 
+      
+      <a href="/tags/#Windows">Windows</a>
+      &nbsp;
+      
+      <a href="/tags/#Productivity">Productivity</a>
+      
+      
+
+
+        <hr class="tight">
+      </li>
+    
+      <li>
         <span class="post-meta">Mar 23, 2020</span>
         
            in
@@ -124,7 +180,7 @@
         
 
         <h2>
-          <a class="post-link" href="/2020/03/productivity-on-windows-p1.html">Increasing productivity on Windows 10, part 1 - Built-in hotkeys</a>
+          <a class="post-link" href="/2020/03/productivity-on-windows-p1-copy.html">Increasing productivity on Windows 10, part 1 - Built-in hotkeys</a>
         </h2>
         <p><p>I’ve decided to make a series on how to increase your productivity on Windows 10. The series will mainly be focused for people in the IT industry, but most of the articles in this series will have some carryover to all Windows users.</p>
 

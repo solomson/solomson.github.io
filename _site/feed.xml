@@ -6,9 +6,52 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Mar 2020 20:32:02 +0100</pubDate>
-    <lastBuildDate>Mon, 23 Mar 2020 20:32:02 +0100</lastBuildDate>
+    <pubDate>Mon, 13 Apr 2020 13:17:35 +0200</pubDate>
+    <lastBuildDate>Mon, 13 Apr 2020 13:17:35 +0200</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Increasing productivity on Windows 10, part 2 - Choclatey package manager</title>
+        <description>&lt;p&gt;Welcome to the second part of this series on productivity in Windows 10.&lt;/p&gt;
+
+&lt;p&gt;For this part we’ll be looking at how to install packaged programs via the command line in Windows.&lt;/p&gt;
+
+&lt;p&gt;To begin, open up at Powershell prompt as admin &lt;code class=&quot;highlighter-rouge&quot;&gt;Win + X + A&lt;/code&gt;
+Paste in the following:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will install chocolatey on your system in a one-liner.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Word of caution before you proceed&lt;/strong&gt; - if you already have some of the programs installed through an MSI or another installer, you may face issues starting the program. The best course of action is then to uninstall either the chocolatey package or the installed program through “Add or Remove programs”.&lt;/p&gt;
+
+&lt;p&gt;Also note that many of the packages chocolatey hosts are unofficial. In theory you could believe you are installing something “safe” and well known product, but there are no guarantees for this in non-official packages.&lt;/p&gt;
+
+&lt;p&gt;Next, try to find a program you wish to install. 
+You can find this either with Google, searching on chocolatey.org or using the &lt;code class=&quot;highlighter-rouge&quot;&gt;choco find &amp;lt;packagename&amp;gt;&lt;/code&gt; command&lt;/p&gt;
+
+&lt;p&gt;Let’s install google chrome.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;choco install googlechrome -y&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s list our installed chocolatey packages &lt;code class=&quot;highlighter-rouge&quot;&gt;choco list --local-only&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This works great when bootstrapping new client machines. Say you wish to have a list of programs installed with the latest versions on your machine. Create a script which runs choco install and takes a list of programs to install.&lt;/p&gt;
+
+&lt;p&gt;To update your package, type &lt;code class=&quot;highlighter-rouge&quot;&gt;choco update &amp;lt;packagename&amp;gt;&lt;/code&gt; 
+To update all your installed packages, type &lt;code class=&quot;highlighter-rouge&quot;&gt;choco update all&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 Apr 2020 12:40:00 +0200</pubDate>
+        <link>http://localhost:4000/2020/04/productivity-on-windows-p2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/productivity-on-windows-p2.html</guid>
+        
+        <category>Windows</category>
+        
+        <category>Productivity</category>
+        
+        
+        <category>Windows</category>
+        
+      </item>
     
       <item>
         <title>Increasing productivity on Windows 10, part 1 - Built-in hotkeys</title>
@@ -202,8 +245,8 @@
 &lt;p&gt;That’s a wrap for now. Stay tuned for more.&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Mar 2020 20:25:00 +0100</pubDate>
-        <link>http://localhost:4000/2020/03/productivity-on-windows-p1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2020/03/productivity-on-windows-p1.html</guid>
+        <link>http://localhost:4000/2020/03/productivity-on-windows-p1-copy.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/03/productivity-on-windows-p1-copy.html</guid>
         
         <category>Windows</category>
         

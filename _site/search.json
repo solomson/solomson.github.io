@@ -1,10 +1,18 @@
 [
   
     {
+      "title"    : "Increasing productivity on Windows 10, part 2 - Choclatey package manager",
+      "category" : "",
+      "tags"     : "Windows, Productivity",
+      "url"      : "/2020/04/productivity-on-windows-p2.html",
+      "date"     : "2020-04-13 12:40:00 +0200"
+    } ,
+  
+    {
       "title"    : "Increasing productivity on Windows 10, part 1 - Built-in hotkeys",
       "category" : "",
       "tags"     : "Windows, Productivity, Hotkeys",
-      "url"      : "/2020/03/productivity-on-windows-p1.html",
+      "url"      : "/2020/03/productivity-on-windows-p1-copy.html",
       "date"     : "2020-03-23 20:25:00 +0100"
     } ,
   

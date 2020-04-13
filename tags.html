@@ -10,11 +10,11 @@ title: Articles by tag
   <div class="archive-group">
     {% capture tag_name %}{{ tag | first }}{% endcapture %}
     <div id="#{{ tag_name | slugize }}"></div>
-    <p></p>
+    <i class="fas fa-tag" word-wrap: break-word;> &nbsp;</i> 
 
-    <h2 class="tag-head">{{ tag_name }}</h2>
-
-    <i class="fas fa-tag" margin-left="1%"></i> 
+    <div class= "blocker" word-wrap: break-word;>
+      <h2 class="tag-head">{{ tag_name }} &nbsp;</h2>
+    </div>
 
     <hr class="tight">
 

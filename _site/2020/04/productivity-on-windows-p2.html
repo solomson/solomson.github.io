@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+
+<html>
+	<head>
+		<title>Audun Solemdal - thoughts on tech  </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="shortcut icon" type="image/png" href="/favicon.png">
+		<meta name="google-site-verification" content="pTUkCWb_kAda0PRYBi5XjVr9pRM4T-UsVGXizAGA1w8" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="toggle-btn" onclick="toggleHeader()">
+				<span></span>
+				<span></span>
+				<span class="margin"></span>
+			</div>
+				<div class="inner">
+					<div id="collapse">
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong class="liquid">I am Audun</strong></h1> <br />
+					<p class="liquid">I work in the realms of
+					Azure and DevOps.
+					</p>
+					<br />
+					<br class="liquid" />
+					<br class="liquid" />
+					
+					
+					 
+						
+					
+					<h4><a class="liquid" href="/about">About</a></h4>
+					
+				  
+					
+					 
+						 
+							
+					
+					 
+						
+					
+					<h4><a class="liquid" href="/external-cv">CV</a></h4>
+					
+				  
+					
+					
+				  
+					
+					 
+						
+					
+					<h4><a class="liquid" href="/">Home</a></h4>
+					
+				  
+					
+					
+				  
+					
+					
+				  
+					
+					 
+						 
+							
+					
+					
+				  
+					
+					
+				  
+				</div>
+				</div>
+			</header>
+
+			<div class="trigger">
+
+			  </div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2 class="post-title">Increasing productivity on Windows 10, part 2 - Choclatey package manager</h2>
+						</header>
+					</section>
+
+			<div class="post-content">
+				<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Welcome to the second part of this series on productivity in Windows 10.</p>
+
+<p>For this part we’ll be looking at how to install packaged programs via the command line in Windows.</p>
+
+<p>To begin, open up at Powershell prompt as admin <code class="highlighter-rouge">Win + X + A</code>
+Paste in the following:
+<code class="highlighter-rouge">Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</code></p>
+
+<p>This will install chocolatey on your system in a one-liner.</p>
+
+<p><strong>Word of caution before you proceed</strong> - if you already have some of the programs installed through an MSI or another installer, you may face issues starting the program. The best course of action is then to uninstall either the chocolatey package or the installed program through “Add or Remove programs”.</p>
+
+<p>Also note that many of the packages chocolatey hosts are unofficial. In theory you could believe you are installing something “safe” and well known product, but there are no guarantees for this in non-official packages.</p>
+
+<p>Next, try to find a program you wish to install. 
+You can find this either with Google, searching on chocolatey.org or using the <code class="highlighter-rouge">choco find &lt;packagename&gt;</code> command</p>
+
+<p>Let’s install google chrome.</p>
+
+<p><code class="highlighter-rouge">choco install googlechrome -y</code></p>
+
+<p>Let’s list our installed chocolatey packages <code class="highlighter-rouge">choco list --local-only</code></p>
+
+<p>This works great when bootstrapping new client machines. Say you wish to have a list of programs installed with the latest versions on your machine. Create a script which runs choco install and takes a list of programs to install.</p>
+
+<p>To update your package, type <code class="highlighter-rouge">choco update &lt;packagename&gt;</code> 
+To update all your installed packages, type <code class="highlighter-rouge">choco update all</code></p>
+
+  </div>
+
+</article>
+<hr class="tight">
+
+<div class="post-categories">
+  
+
+  <i class="fas fa-folder-open"></i>
+  
+  <a href="/categories/#Windows">Windows</a>
+  
+  
+  
+  <br>
+
+<i class="fas fa-tags"></i> 
+  
+  <a href="/tags/#Windows">Windows</a>
+  &nbsp;
+  
+  <a href="/tags/#Productivity">Productivity</a>
+  
+  
+</div>
+<hr class="tight">
+				</div>
+
+			</div>
+				
+		<!-- Footer -->
+
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="//www.github.com/solomson" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="//www.linkedin.com/in/audun-solemdal/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="mailto:audunlsolemdal@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="/" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
+					<ul class="copyright" >
+						<li class="liquid">by Audun Solemdal</li><li class="liquid"></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.poptrox.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+			<script src="/assets/js/sidebar.js"></script>
+			<script src="/assets/js/search.js"></script>
+
+	</body>
+</html>
