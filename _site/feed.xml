@@ -6,12 +6,12 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Apr 2020 13:31:00 +0200</pubDate>
-    <lastBuildDate>Mon, 13 Apr 2020 13:31:00 +0200</lastBuildDate>
+    <pubDate>Mon, 13 Apr 2020 13:34:03 +0200</pubDate>
+    <lastBuildDate>Mon, 13 Apr 2020 13:34:03 +0200</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title>Increasing productivity on Windows 10, part 2 - Choclatey package manager</title>
+        <title>Increasing productivity on Windows 10, part 2 - Chocolatey package manager</title>
         <description>&lt;p&gt;Welcome to the second part of this series on productivity in Windows 10.&lt;/p&gt;
 
 &lt;p&gt;For this part we’ll be looking at how to install packaged programs via the command line in Windows.&lt;/p&gt;

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Increasing productivity on Windows 10, part 2 - Choclatey package manager"
+title:  "Increasing productivity on Windows 10, part 2 - Chocolatey package manager"
 date:   2020-04-13 12:40:00 +0200
 categories: [Windows]
 tags: [Windows, Productivity]
