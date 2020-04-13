@@ -1,0 +1,185 @@
+I"A<p>I’ve decided to make a series on how to increase your productivity on Windows 10. The guide will mainly be focused for people in the IT industry, but most of the articles in this series will have some carryover to all Windows users.</p>
+
+<p>Some of the reasoning behind this is that after starting my latest job I’ve been surrounded with people having their highly customized personal setup on Linux or MacOS. And I’ll have to say that some of the things they showed me impressed me, and I wondered if I could do the same in Windows.</p>
+
+<p>Obviously I could switch to Mac or Linux, but being a Windows user since 1998, I’ve grown quite accustomed to it.</p>
+
+<h2>Hotkeys</h2>
+
+<p>One neat tool for learning Windows shortcuts is to install the tool <a href="https://github.com/microsoft/PowerToys">PowerToys</a>. While the program runs, holding down the Windows key for a second or so will list all available hotkeys.</p>
+
+<p>To get a full overview of most hotkeys, see <a href="https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts">here</a>. I will only be listing hotkeys I actually use my self, some more than others. I’d suggest you read what a hotkey actually accomplishes, and if it’s relevant to your or not before trying to remember the combinations.</p>
+
+<h4>Windows key combinations</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Combination</th>
+      <th>Accomplishes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Win + L</td>
+      <td>Lock your PC</td>
+    </tr>
+    <tr>
+      <td>Win + (1-9)</td>
+      <td>Open Window n from taskbar</td>
+    </tr>
+    <tr>
+      <td>Win + Shift + ArrowKey</td>
+      <td>Move current window to another monitor</td>
+    </tr>
+    <tr>
+      <td>Win + E</td>
+      <td>Open explorer</td>
+    </tr>
+    <tr>
+      <td>Win + P</td>
+      <td>Multi-monitor settings</td>
+    </tr>
+    <tr>
+      <td>Win + ,</td>
+      <td>Peek desktop background</td>
+    </tr>
+    <tr>
+      <td>Win + Ctrl + ArrowKey</td>
+      <td>Switch to next virtual desktop</td>
+    </tr>
+    <tr>
+      <td>Win + ArrowKey</td>
+      <td>Snap window</td>
+    </tr>
+    <tr>
+      <td>Win + X</td>
+      <td>Right click on Windows icon</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The top 3 hotkeys listed above are shortcuts I use multiple times every day on my machine. I only recently learned about number 2 and 3. Instead of having to aim your mouse at the top of your window, drag it to another screen and double click to maximize, I now just <code class="highlighter-rouge">Win + Shift + LeftArrow</code> or <code class="highlighter-rouge">Win + Shift + RightArrow</code></p>
+
+<p>Using the <code class="highlighter-rouge">Win + n</code> hotkey also works great, especially if you have pinned your most used programs to the taskbar. I keep my top three most used programs at the same position across all my PC’s.</p>
+
+<p>The <code class="highlighter-rouge">Win + x</code> combination is really only useful if you are willing to learn the other sub-commands you can type, e.g. <code class="highlighter-rouge">Win + x, u u</code> shut downs your computer. This isn’t for everyone, as reaching your hand away from your desktop onto the ‘off’ button seems easier to remember.</p>
+
+<h4>Ctrl key combinations</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Combination</th>
+      <th>Accomplishes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ctrl +  C</td>
+      <td>Copy selected item/text</td>
+    </tr>
+    <tr>
+      <td>Ctrl +  V</td>
+      <td>Paste selected item/text</td>
+    </tr>
+    <tr>
+      <td>Ctrl +  Z</td>
+      <td>Undo last</td>
+    </tr>
+    <tr>
+      <td>Ctrl +  Y</td>
+      <td>Reverse undo</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Tab</td>
+      <td>Open next tab in most programs</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Shift + Tab</td>
+      <td>Open previous tab in most programs</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Shift + Escape</td>
+      <td>Open task manager</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Alt + Delete</td>
+      <td>The great escape key</td>
+    </tr>
+    <tr>
+      <td>Ctrl +  T</td>
+      <td>Open new tab in browser</td>
+    </tr>
+    <tr>
+      <td>Ctrl + 1-9</td>
+      <td>Open tab n in most browsers</td>
+    </tr>
+    <tr>
+      <td>Ctrl +  J</td>
+      <td>Open downloads in browser</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Shift +  N</td>
+      <td>Open new incognito tab in browser</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Shift +  T</td>
+      <td>Open last closed tab in browser</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Personally I am a tab junkie, so the built-in maneuvering between tabs with ctrl tab and ctrl shift tab gets difficult. I’ll post my setup on how to simplify “hard to reach but useful hotkeys” in a future post in this series.</p>
+
+<p>The ctrl shift + t key can also be used if you accidentally closed an entire window, in that case opening a new browser window and hitting the combination will bring up all closed tabs from the last session.</p>
+
+<h4>Terminal specific combinations</h4>
+
+<p>The following combinations are tested in my PowerShell console on Windows, but I know for a fact that multiple of them work on Linux as well.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Combination</th>
+      <th>Accomplishes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ctrl + C</td>
+      <td>Stop your current command ASAP</td>
+    </tr>
+    <tr>
+      <td>Alt + .</td>
+      <td>Paste last argument from previous command</td>
+    </tr>
+    <tr>
+      <td>Ctrl + Insert</td>
+      <td>Copy clipboard from terminal</td>
+    </tr>
+    <tr>
+      <td>Shift + Insert</td>
+      <td>Paste clipboard to terminal</td>
+    </tr>
+    <tr>
+      <td>Ctrl + R</td>
+      <td>Inline search history for your commands</td>
+    </tr>
+    <tr>
+      <td>Ctrl + LeftArrow</td>
+      <td>Jump an entire word to the left in terminal</td>
+    </tr>
+    <tr>
+      <td>Ctrl + RightArrow</td>
+      <td>Jump an entire word to the right in terminal</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In all honesty I still use my right mouse button click to paste text, as I find the insert button “too far away” (even though my mouse is even further away)</p>
+
+<p>The most interesting in my opinion is <code class="highlighter-rouge">Alt + .</code> Say if you are creating a directory in bash <code class="highlighter-rouge">mkdir ./very/long/path/tomyfile</code> Instead of having to copy and paste the file name, or type cd <code class="highlighter-rouge">./very/long/path/tomyfile</code> you can simply type <code class="highlighter-rouge">cd</code> and press <code class="highlighter-rouge">Alt + .</code> and hit the enter key.</p>
+
+<p>That’s a wrap for now. Stay tuned for more.</p>
+:ET

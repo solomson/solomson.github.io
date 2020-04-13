@@ -1,132 +1,4 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-
-
-<html>
-	<head>
-		<title>Audun Solemdal - thoughts on tech  </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
-		<link rel="shortcut icon" type="image/png" href="/favicon.png">
-		<meta name="google-site-verification" content="pTUkCWb_kAda0PRYBi5XjVr9pRM4T-UsVGXizAGA1w8" />
-	</head>
-	<body class="is-preload">
-
-		<!-- Header -->
-			<header id="header">
-				<div class="toggle-btn" onclick="toggleHeader()">
-				<span></span>
-				<span></span>
-				<span class="margin"></span>
-			</div>
-				<div class="inner">
-					<div id="collapse">
-					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-					<h1><strong class="liquid">I am Audun</strong></h1> <br />
-					<p class="liquid">I work in the realms of
-					Azure and DevOps.
-					</p>
-					<br />
-					<br class="liquid" />
-					<br class="liquid" />
-					
-					
-					 
-						
-					
-					<h4><a class="liquid" href="/about">About</a></h4>
-					
-				  
-					
-					 
-						 
-							
-					
-					 
-						
-					
-					<h4><a class="liquid" href="/external-cv">CV</a></h4>
-					
-				  
-					
-					
-				  
-					
-					 
-						
-					
-					<h4><a class="liquid" href="/">Home</a></h4>
-					
-				  
-					
-					
-				  
-					
-					
-				  
-					
-					 
-						 
-							
-					
-					
-				  
-					
-					
-				  
-				</div>
-				</div>
-			</header>
-
-			<div class="trigger">
-
-			  </div>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2 class="post-title">Home</h2>
-						</header>
-					</section>
-
-			<div class="post-content">
-				<div class="home">
-
-<p> Scroll through my posts or try the search function.</p>
-
-<!-- HTML elements for search -->
-<input type="text" id="search-input" placeholder="Search blog posts..">
-<ul id="results-container"></ul>
-
-<!-- or without installing anything -->
-<script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script>
-
-
-  <h2 class="page-heading">Posts</h2>
-
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Mar 23, 2020</span>
-        
-           in
-        
-        <a href="/categories/#Windows"> Windows</a>
-        
-        
-
-        <h2>
-          <a class="post-link" href="/2020/03/productivity-on-windows-p1.html">Increasing productivity on Windows 10, part 1 - Built-in hotkeys</a>
-        </h2>
-        <p><p>I’ve decided to make a series on how to increase your productivity on Windows 10. The series will mainly be focused for people in the IT industry, but most of the articles in this series will have some carryover to all Windows users.</p>
+I"�<p>I’ve decided to make a series on how to increase your productivity on Windows 10. The guide will mainly be focused for people in the IT industry, but most of the articles in this series will have some carryover to all Windows users.</p>
 
 <p>Some of the reasoning behind this is that after starting my latest job I’ve been surrounded with people having their highly customized personal setup on Linux or MacOS. And I’ll have to say that some of the things they showed me impressed me, and I wondered if I could do the same in Windows.</p>
 
@@ -191,7 +63,7 @@
 
 <p>Using the <code class="highlighter-rouge">Win + (1-9)</code> hotkey also works great, especially if you have pinned your most used programs to the taskbar. I keep my top three most used programs at the same position across all my PC’s.</p>
 
-<p>The <code class="highlighter-rouge">Win + x</code> combination is really only useful if you are willing to learn the other sub-commands you can type, e.g. <code class="highlighter-rouge">Win + x, u u</code> shut downs your computer. This isn’t for everyone, as reaching your hand away from your desktop onto the ‘off’ button seems easier to remember for some unexplainable reason.</p>
+<p>The <code class="highlighter-rouge">Win + x</code> combination is really only useful if you are willing to learn the other sub-commands you can type, e.g. <code class="highlighter-rouge">Win + x, u u</code> shut downs your computer. This isn’t for everyone, as reaching your hand away from your desktop onto the ‘off’ button seems easier to remember for some reason.</p>
 
 <h3>Ctrl key combinations</h3>
 
@@ -264,7 +136,7 @@
 
 <p>Personally I am a tab junkie, so the built-in maneuvering between tabs with ctrl tab and ctrl shift tab gets difficult. I’ll post my setup on how to simplify “hard to reach but useful hotkeys” in a future post in this series.</p>
 
-<p>The <code class="highlighter-rouge">ctrl + shift + t</code> combination can also be used if you accidentally closed an entire window, in that case opening a new browser window and hitting the combination will bring up all closed tabs from the last session.</p>
+<p>The <code class="highlighter-rouge">ctrl + shift + t</code> key can also be used if you accidentally closed an entire window, in that case opening a new browser window and hitting the combination will bring up all closed tabs from the last session.</p>
 
 <h3>Terminal specific combinations</h3>
 
@@ -314,96 +186,4 @@
 <p>The most interesting in my opinion is <code class="highlighter-rouge">Alt + .</code> Say if you are creating a directory in bash <code class="highlighter-rouge">mkdir ./very/long/path/tomyfile</code> Instead of having to copy and paste the file name, or type cd <code class="highlighter-rouge">./very/long/path/tomyfile</code> you can simply type <code class="highlighter-rouge">cd</code> and press <code class="highlighter-rouge">Alt + .</code> and hit the enter key.</p>
 
 <p>That’s a wrap for now. Stay tuned for more.</p>
- </p>
-
-      
-    
-    <i class="fas fa-tags"></i> 
-      
-      <a href="/tags/#Windows">Windows</a>
-      &nbsp;
-      
-      <a href="/tags/#Productivity">Productivity</a>
-      &nbsp;
-      
-      <a href="/tags/#Hotkeys">Hotkeys</a>
-      
-      
-
-
-        <hr class="tight">
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 29, 2020</span>
-        
-           in
-        
-        <a href="/categories/#General"> General</a>
-        
-        
-
-        <h2>
-          <a class="post-link" href="/2020/02/about-this-site.html">About this site..</a>
-        </h2>
-        <p><p>Planning to eventually write some articles in one or more of the following areas:</p>
-<ul>
-  <li>Azure</li>
-  <li>DevOps</li>
-  <li>Cloud native</li>
-  <li>Kubernetes</li>
-</ul>
-
-<p>You can read more about me <a href="/about.html">here</a>.</p>
- </p>
-
-      
-    
-    <i class="fas fa-tags"></i> 
-      
-      <a href="/tags/#Info">Info</a>
-      
-      
-
-
-        <hr class="tight">
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
-
-				</div>
-
-			</div>
-				
-		<!-- Footer -->
-
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="//www.github.com/solomson" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="//www.linkedin.com/in/audun-solemdal/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="mailto:audunlsolemdal@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="/" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-					</ul>
-					<ul class="copyright" >
-						<li class="liquid">by Audun Solemdal</li><li class="liquid"></li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/jquery.poptrox.min.js"></script>
-			<script src="/assets/js/browser.min.js"></script>
-			<script src="/assets/js/breakpoints.min.js"></script>
-			<script src="/assets/js/util.js"></script>
-			<script src="/assets/js/main.js"></script>
-			<script src="/assets/js/sidebar.js"></script>
-			<script src="/assets/js/search.js"></script>
-
-	</body>
-</html>
+:ET

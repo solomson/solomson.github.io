@@ -6,9 +6,215 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Mar 2020 22:51:02 +0100</pubDate>
-    <lastBuildDate>Sun, 22 Mar 2020 22:51:02 +0100</lastBuildDate>
+    <pubDate>Mon, 23 Mar 2020 20:32:02 +0100</pubDate>
+    <lastBuildDate>Mon, 23 Mar 2020 20:32:02 +0100</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Increasing productivity on Windows 10, part 1 - Built-in hotkeys</title>
+        <description>&lt;p&gt;I’ve decided to make a series on how to increase your productivity on Windows 10. The series will mainly be focused for people in the IT industry, but most of the articles in this series will have some carryover to all Windows users.&lt;/p&gt;
+
+&lt;p&gt;Some of the reasoning behind this is that after starting my latest job I’ve been surrounded with people having their highly customized personal setup on Linux or MacOS. And I’ll have to say that some of the things they showed me impressed me, and I wondered if I could do the same in Windows.&lt;/p&gt;
+
+&lt;p&gt;Obviously I could switch to Mac or Linux, but being a Windows user since 1998, I’ve grown quite accustomed to it. So after a few months on and off improving my productivity and general user experience on Windows 10, I thought this would be a good opportunity to share some tips, thoughts and tricks on the matter.&lt;/p&gt;
+
+&lt;h2&gt;Hotkeys&lt;/h2&gt;
+
+&lt;p&gt;One neat tool for learning Windows shortcuts is to install the tool &lt;a href=&quot;https://github.com/microsoft/PowerToys&quot;&gt;PowerToys&lt;/a&gt;. While the program runs, holding down the Windows key for a second or so will list all available hotkeys.&lt;/p&gt;
+
+&lt;p&gt;To get a full overview of most hotkeys, see &lt;a href=&quot;https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts&quot;&gt;here&lt;/a&gt;. I will only be listing hotkeys I actually use my self, some more than others. I’d suggest you read what a hotkey actually accomplishes, and if it’s relevant to your or not before trying to remember the combinations.&lt;/p&gt;
+
+&lt;h3&gt;Windows key combinations&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Combination&lt;/th&gt;
+      &lt;th&gt;Accomplishes&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Win + L&lt;/td&gt;
+      &lt;td&gt;Lock your PC&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Win + (1-9)&lt;/td&gt;
+      &lt;td&gt;Open Window n from taskbar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Win + Shift + ArrowKey&lt;/td&gt;
+      &lt;td&gt;Move current window to another monitor&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Win + E&lt;/td&gt;
+      &lt;td&gt;Open explorer&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Win + P&lt;/td&gt;
+      &lt;td&gt;Multi-monitor settings&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Win + ,&lt;/td&gt;
+      &lt;td&gt;Peek desktop background&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Win + Ctrl + ArrowKey&lt;/td&gt;
+      &lt;td&gt;Switch to next virtual desktop&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Win + ArrowKey&lt;/td&gt;
+      &lt;td&gt;Snap window&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Win + X&lt;/td&gt;
+      &lt;td&gt;Right click on Windows icon&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The top 3 hotkeys listed above are shortcuts I use multiple times every day on my machine. I only recently learned about number 2 and 3. Instead of having to aim your mouse at the top of your window, drag it to another screen and double click to maximize, I now just &lt;code class=&quot;highlighter-rouge&quot;&gt;Win + Shift + LeftArrow&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Win + Shift + RightArrow&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Using the &lt;code class=&quot;highlighter-rouge&quot;&gt;Win + (1-9)&lt;/code&gt; hotkey also works great, especially if you have pinned your most used programs to the taskbar. I keep my top three most used programs at the same position across all my PC’s.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Win + x&lt;/code&gt; combination is really only useful if you are willing to learn the other sub-commands you can type, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;Win + x, u u&lt;/code&gt; shut downs your computer. This isn’t for everyone, as reaching your hand away from your desktop onto the ‘off’ button seems easier to remember for some unexplainable reason.&lt;/p&gt;
+
+&lt;h3&gt;Ctrl key combinations&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Combination&lt;/th&gt;
+      &lt;th&gt;Accomplishes&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl +  C&lt;/td&gt;
+      &lt;td&gt;Copy selected item/text&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl +  V&lt;/td&gt;
+      &lt;td&gt;Paste selected item/text&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl +  Z&lt;/td&gt;
+      &lt;td&gt;Undo last&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl +  Y&lt;/td&gt;
+      &lt;td&gt;Reverse undo&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Tab&lt;/td&gt;
+      &lt;td&gt;Open next tab in most programs&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + Tab&lt;/td&gt;
+      &lt;td&gt;Open previous tab in most programs&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + Escape&lt;/td&gt;
+      &lt;td&gt;Open task manager&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Alt + Delete&lt;/td&gt;
+      &lt;td&gt;The great escape key&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl +  T&lt;/td&gt;
+      &lt;td&gt;Open new tab in browser&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl +  W&lt;/td&gt;
+      &lt;td&gt;Close current tab in browser&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + (1-9)&lt;/td&gt;
+      &lt;td&gt;Open tab n in most browsers&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl +  J&lt;/td&gt;
+      &lt;td&gt;Open downloads in browser&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift +  N&lt;/td&gt;
+      &lt;td&gt;Open new incognito tab in browser&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift +  T&lt;/td&gt;
+      &lt;td&gt;Open last closed tab in browser&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Personally I am a tab junkie, so the built-in maneuvering between tabs with ctrl tab and ctrl shift tab gets difficult. I’ll post my setup on how to simplify “hard to reach but useful hotkeys” in a future post in this series.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;ctrl + shift + t&lt;/code&gt; combination can also be used if you accidentally closed an entire window, in that case opening a new browser window and hitting the combination will bring up all closed tabs from the last session.&lt;/p&gt;
+
+&lt;h3&gt;Terminal specific combinations&lt;/h3&gt;
+
+&lt;p&gt;The following combinations are tested in my PowerShell console on Windows, but I know for a fact that multiple of them work on Linux as well.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Combination&lt;/th&gt;
+      &lt;th&gt;Accomplishes&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + C&lt;/td&gt;
+      &lt;td&gt;Stop your current command ASAP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alt + .&lt;/td&gt;
+      &lt;td&gt;Paste last argument from previous command&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Insert&lt;/td&gt;
+      &lt;td&gt;Copy clipboard from terminal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift + Insert&lt;/td&gt;
+      &lt;td&gt;Paste clipboard to terminal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + R&lt;/td&gt;
+      &lt;td&gt;Inline search history for your commands&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + LeftArrow&lt;/td&gt;
+      &lt;td&gt;Jump an entire word to the left in terminal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + RightArrow&lt;/td&gt;
+      &lt;td&gt;Jump an entire word to the right in terminal&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In all honesty I still use my right mouse button click to paste text, as I find the insert button “too far away” from my right hand (even though in reality my mouse is even further away for much of the time)&lt;/p&gt;
+
+&lt;p&gt;The most interesting in my opinion is &lt;code class=&quot;highlighter-rouge&quot;&gt;Alt + .&lt;/code&gt; Say if you are creating a directory in bash &lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir ./very/long/path/tomyfile&lt;/code&gt; Instead of having to copy and paste the file name, or type cd &lt;code class=&quot;highlighter-rouge&quot;&gt;./very/long/path/tomyfile&lt;/code&gt; you can simply type &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; and press &lt;code class=&quot;highlighter-rouge&quot;&gt;Alt + .&lt;/code&gt; and hit the enter key.&lt;/p&gt;
+
+&lt;p&gt;That’s a wrap for now. Stay tuned for more.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Mar 2020 20:25:00 +0100</pubDate>
+        <link>http://localhost:4000/2020/03/productivity-on-windows-p1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/03/productivity-on-windows-p1.html</guid>
+        
+        <category>Windows</category>
+        
+        <category>Productivity</category>
+        
+        <category>Hotkeys</category>
+        
+        
+        <category>Windows</category>
+        
+      </item>
     
       <item>
         <title>About this site..</title>

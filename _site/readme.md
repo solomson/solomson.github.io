@@ -8,4 +8,4 @@ This website is created by combining:
 Local dev:
 
 clone this repo
-cd to repo, and type `Jekyll serve`
+cd to repo, and type `bundle exec jekyll serve`
