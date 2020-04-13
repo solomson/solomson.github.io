@@ -70,6 +70,12 @@ hr.tight {
 	margin-bottom: 10px;
 }
 
+hr.untight {
+	margin-top: 10px;
+	margin-bottom: 2.5em;
+}
+
+
 input, select, textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
