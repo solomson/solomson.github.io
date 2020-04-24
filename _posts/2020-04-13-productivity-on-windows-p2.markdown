@@ -1,35 +1,126 @@
 ---
 layout: post
-title:  "Increasing productivity on Windows 10, part 2 - Chocolatey package manager"
-date:   2020-04-13 12:40:00 +0200
+title:  "Increasing productivity on Windows 10, part 3 - AutoHotKey"
+date:   2020-04-24 20:10:00 +0200
 categories: [Windows]
 tags: [Windows, Productivity]
 ---
 
-Welcome to the second part of this series on productivity in Windows 10.
+Welcome to the third part of this series on productivity in Windows 10.
 
-For this part we'll be looking at how to install packaged programs via the command line in Windows.
+For this part we'll be looking at how to create custom keybindings and macros on Windows.
+
+Autohotkey has been around for quite a lot of years, and is probably the most used macro tool on Windows. I remember first encountering the tool in 2010 to rebind some commands in GTA San Andreas multiplayer to button combinations. For this article I'll showcase parts of my dotfiles and explain how I use them. Hopefully you can also get some inspiration from this too.
+
+My full dotfiles can be found at https://github.com/solomson/dotfiles/startup/raw
 
 To begin, open up at Powershell prompt as admin `Win + X + A`
 Paste in the following: 
-```Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))```
+```choco install autohotkey -y```
 
-This will install chocolatey on your system in a one-liner.
+This will install autohotkey on your system in a one-liner.
 
-**Word of caution before you proceed** - if you already have some of the programs installed through an MSI or another installer, you may face issues starting the program. The best course of action is then to uninstall either the chocolatey package or the installed program through "Add or Remove programs".
+The way to use autohotkey is to create an .ahk file and run it. As you want keybindings to be consistent, it makes sense to put them into your startup folder.
+To go to your startup folder, simply open Windows explorer, `Win + E` and type `shell:startup` in the menu bar. Once you are satisfied with your file, drag it here.
 
-Also note that many of the packages chocolatey hosts are unofficial. In theory you could believe you are installing something "safe" and well known product, but there are no guarantees for this in non-official packages.
+My current keybinds.ahk file
 
-Next, try to find a program you wish to install. 
-You can find this either with Google, searching on chocolatey.org or using the `choco find <packagename>` command
+```
+#SingleInstance force
 
-Let's install google chrome. 
+; Default state of lock keys
+SetCapsLockState, AlwaysOff
+SetScrollLockState, AlwaysOff
+return
 
-`choco install googlechrome -y`
+; Suspend AutoHotKey
+CapsLock & p::Suspend ; 
+return
 
-Let's list our installed chocolatey packages `choco list --local-only`
+; Always on Top
+^SPACE:: Winset, Alwaysontop, , A ; ctrl + space
+Return
 
-This works great when bootstrapping new client machines. Say you wish to have a list of programs installed with the latest versions on your machine. Create a script which runs choco install and takes a list of programs to install.
+; Google Search highlighted text
+CapsLock & Space::
+{
+    Send, ^c
+    Sleep 50
+    Run, http://www.google.com/search?q=%clipboard%
+    Return
+}
 
-To update your package, type `choco update <packagename>` 
-To update all your installed packages, type `choco update all`
+; Rebind useless key to braces
++|::
+{
+    Send, {RAlt Down}{7}{RAlt Up} 
+    Send, {RAlt Down}{0}{RAlt Up}
+    return
+}
+
+
+; Scroll tab forward (chrome) 
+CapsLock & WheelDown::
+{
+    Send ^{Tab}
+    sleep 50
+    return
+}
+
+; Scroll tab back (chrome)
+CapsLock & WheelUp::
+{
+    Send, ^+{Tab}
+    sleep 50
+    return
+}
+
+; Cleanup for calculators
+#c::
+if WinExist("Kalkulator") || if WinExist("Calculator")
+{
+    WinActivate  ; Automatically uses the window found above.
+    Send, {Escape}
+    Send, {Enter}
+    return
+}
+else 
+{
+   ; Run, calc.exe
+    return
+}
+
+#n::
+if WinExist("Untitled - Notepad") || if WinExist("*Untitled - Notepad")
+{
+    WinActivate  ; Automatically uses the window found above.
+    Send, {Enter}
+    Send, {Enter}
+    return
+}
+else 
+{
+    Run, notepad.exe
+    return
+}
+
+; Unused F keys
+
+
+; Mouse click with useless key (right ctrl)
+RCtrl::
+{
+    Click
+    Return
+}
+```
+
+Notice that I've disabled my capslock key, and instead use it as a function key. CapsLock is placed at a great place to use for your pinky finger, and is very underutilized due to its default function. 
+Capslock + Space for me takes the current clipboard and googles it. 
+
+I never use right control, now I've rebound it so I can get an easy left click if I have two hands at the keyboard. Can be useful in some situations
+
+I've bound My freed up caps-lock + wheeldown / wheelup to scroll through tabs (ctrl + tab, ctrl + shift + tab). I am a tab junkie, so I find this very useful to scroll through my tabs quickly.
+
+Win + C opens up a calculator
+Win + N opens up notepad, but makes sure you reuse an existing notepad if you have one. Before I started using this I always ended up with my quick notes spread all over in multiple notepads. Making a mess of my notes. I have tried OneNote and Notepad++, but for some reason I still enjoy notepad (as long as it doesn't get messy).
