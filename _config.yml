@@ -15,6 +15,7 @@ url: "https://solomson.github.io" # the base hostname & protocol for your site
 twitter_username: ASolemdal
 github_username:  solomson
 permalink: /:year/:month/:title.html
+excerpt_separator: "<!--more-->" # Use excerpts on front page
 
 # Build settings
 markdown: kramdown

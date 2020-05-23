@@ -12,6 +12,8 @@ For this part we'll be looking at how to create custom keybindings and macros on
 
 Autohotkey has been around for quite a lot of years, and is probably the most used macro tool on Windows. I remember first encountering the tool in 2010 to rebind some commands in GTA San Andreas multiplayer to button combinations. For this article I'll showcase parts of my dotfiles and explain how I use them. Hopefully you can also get some inspiration from this too.
 
+<!--more-->
+
 My full dotfiles can be found at https://github.com/solomson/dotfiles/startup/raw
 
 To begin, open up at Powershell prompt as admin `Win + X + A`

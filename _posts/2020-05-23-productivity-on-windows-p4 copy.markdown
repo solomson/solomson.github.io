@@ -13,6 +13,7 @@ To get started, first install the Windows Terminal `choco install microsoft-wind
 
 I also recommend using PowerShell 7.x as your main shell, with a few settings. If you want to copy-paste mine, you can find them at dotfiles can be found at https://github.com/solomson/dotfiles/startup/raw , but beware that some of the settings are personalized.
 
+<!--more-->
 The end result will look something like this, given that you have the correct modules installed:
 
 ```

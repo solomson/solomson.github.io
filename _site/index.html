@@ -126,55 +126,15 @@
         <h2>
           <a class="post-link" href="/2020/05/productivity-on-windows-p4-copy.html">Increasing productivity on Windows 10, part 4 - CLI</a>
         </h2>
-        <p><p>For this part we’ll be looking at how to improve your CLI experience on Windows.</p>
+        
+            <p>For this part we’ll be looking at how to improve your CLI experience on Windows.</p>
 
 <p>To get started, first install the Windows Terminal <code class="highlighter-rouge">choco install microsoft-windows-terminal</code></p>
 
 <p>I also recommend using PowerShell 7.x as your main shell, with a few settings. If you want to copy-paste mine, you can find them at dotfiles can be found at https://github.com/solomson/dotfiles/startup/raw , but beware that some of the settings are personalized.</p>
 
-<p>The end result will look something like this, given that you have the correct modules installed:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>posh-git
-oh-my-posh + Paradox Theme
-PSReadLine version 2.1.0-beta1 or higher
-</code></pre></div></div>
-
-<p><img src="/assets/img/2020-05-23-1.png" /></p>
-
-<p>To install the modules, use the Install-Module cmdlet. for pre-releases, use the <code class="highlighter-rouge">-AllowPrerelease</code> switch parameter.</p>
-
-<p>I also recommend installing WSL (Windows Subsystem for Linux) on your machine. This allows you to use linux utils interchangeably in your shell, or having different tabs running either on your Windows host, or in a Linux distro of your choice. WSL2 is set to be released with Windows 10 2004 in the end of May with further improvements.
-For your Linux CLI I recommend using zsh together with the autosugesstions plugin. zsh is more or less compatible with bash, but adds some extra extensions (as far as my understanding goes).</p>
-
-<p>I’ll likely go into more detail on how to get started with WSL in another article. Personally I mostly deal with bash/sh on Linux due to de facto Linux standards.</p>
-
-<p>Moving back to Windows and PowerShell. What I love about PowerShell is its syntax consistency, tab-autocompletion and modular approach. Last but not least, in PowerShell you deal with objects rather than string manipulation.</p>
-
-<p>Let’s use a more or less useless example:</p>
-
-<p><code class="highlighter-rouge">Get-Process | Where-Object -Property Name -eq "AutoHotkey" | Select-Object -Property Name</code></p>
-
-<p>Given the example from someone with experience with either SQL or programming (ideally both), it is simple to understand what we are doing with the above command. We do not have to be so verbose about it, but for scripts and maintainability, reading comprehension should be prioritized over letters typed in my opinion. Using the CLI, we can achieve the same thing with fewer keystrokes using the following command:</p>
-
-<p><code class="highlighter-rouge">ps | where Name -eq "autohotkey" | select name</code></p>
-
-<p>The above command uses the “ps” alias for Get-Process, and uses positional parameter values so that we don’t have to specify the <code class="highlighter-rouge">-Property</code> flags.</p>
-
-<p>How do to this in sh/bash?</p>
-
-<p><code class="highlighter-rouge">ps | grep autohotkey | awk ...</code></p>
-
-<p>Since sh is text based rather than object based, you can’t just ask for properties, you have to use awk to manipulate the string based on the input sent through the pipeline. Naturally there will be some bash wizards out there, but for a regular CLI user, both “guessing” what the correct command for the task is based on consistent naming + having consistent parameters, properties is just a far simpler way to deal with this without having to dig in deep.</p>
-
-<p>One of my main use cases for PowerShell is dealing with tasks which are either time consuming, error prone or simply not possible with point and click.</p>
-
-<p>Let me show just a simple use-case where I create a mailing list based on AAD group membership</p>
-
-<p><code class="highlighter-rouge">Get-AzADGroup -DisplayName "MyAADGroupName" | Get-AzADGroupMember | select -Property UserPrincipalName | ForEach-Object { echo ($_.UserPrincipalName +";")  } | Set-Clipboard</code></p>
-
-<p>Now simply open up Outlook, paste your clipboard into the Bcc. section and type your email. (Note that Outlook currently has a limit of 500 recipients per email)</p>
-
- </p>
+        
 
       
     
@@ -209,124 +169,15 @@ For your Linux CLI I recommend using zsh together with the autosugesstions plugi
         <h2>
           <a class="post-link" href="/2020/04/productivity-on-windows-p2.html">Increasing productivity on Windows 10, part 3 - AutoHotKey</a>
         </h2>
-        <p><p>Welcome to the third part of this series on productivity in Windows 10.</p>
+        
+            <p>Welcome to the third part of this series on productivity in Windows 10.</p>
 
 <p>For this part we’ll be looking at how to create custom keybindings and macros on Windows.</p>
 
 <p>Autohotkey has been around for quite a lot of years, and is probably the most used macro tool on Windows. I remember first encountering the tool in 2010 to rebind some commands in GTA San Andreas multiplayer to button combinations. For this article I’ll showcase parts of my dotfiles and explain how I use them. Hopefully you can also get some inspiration from this too.</p>
 
-<p>My full dotfiles can be found at https://github.com/solomson/dotfiles/startup/raw</p>
 
-<p>To begin, open up at Powershell prompt as admin <code class="highlighter-rouge">Win + X + A</code>
-Paste in the following:
-<code class="highlighter-rouge">choco install autohotkey -y</code></p>
-
-<p>This will install autohotkey on your system in a one-liner.</p>
-
-<p>The way to use autohotkey is to create an .ahk file and run it. As you want keybindings to be consistent, it makes sense to put them into your startup folder.
-To go to your startup folder, simply open Windows explorer, <code class="highlighter-rouge">Win + E</code> and type <code class="highlighter-rouge">shell:startup</code> in the menu bar. Once you are satisfied with your file, drag it here.</p>
-
-<p>My current keybinds.ahk file</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#SingleInstance force
-
-; Default state of lock keys
-SetCapsLockState, AlwaysOff
-SetScrollLockState, AlwaysOff
-return
-
-; Suspend AutoHotKey
-CapsLock &amp; p::Suspend ; 
-return
-
-; Always on Top
-^SPACE:: Winset, Alwaysontop, , A ; ctrl + space
-Return
-
-; Google Search highlighted text
-CapsLock &amp; Space::
-{
-    Send, ^c
-    Sleep 50
-    Run, http://www.google.com/search?q=%clipboard%
-    Return
-}
-
-; Rebind useless key to braces
-+|::
-{
-    Send, {RAlt Down}{7}{RAlt Up} 
-    Send, {RAlt Down}{0}{RAlt Up}
-    return
-}
-
-
-; Scroll tab forward (chrome) 
-CapsLock &amp; WheelDown::
-{
-    Send ^{Tab}
-    sleep 50
-    return
-}
-
-; Scroll tab back (chrome)
-CapsLock &amp; WheelUp::
-{
-    Send, ^+{Tab}
-    sleep 50
-    return
-}
-
-; Cleanup for calculators
-#c::
-if WinExist("Kalkulator") || if WinExist("Calculator")
-{
-    WinActivate  ; Automatically uses the window found above.
-    Send, {Escape}
-    Send, {Enter}
-    return
-}
-else 
-{
-   ; Run, calc.exe
-    return
-}
-
-#n::
-if WinExist("Untitled - Notepad") || if WinExist("*Untitled - Notepad")
-{
-    WinActivate  ; Automatically uses the window found above.
-    Send, {Enter}
-    Send, {Enter}
-    return
-}
-else 
-{
-    Run, notepad.exe
-    return
-}
-
-; Unused F keys
-
-
-; Mouse click with useless key (right ctrl)
-RCtrl::
-{
-    Click
-    Return
-}
-</code></pre></div></div>
-
-<p>Notice that I’ve disabled my capslock key, and instead use it as a function key. CapsLock is placed at a great place to use for your pinky finger, and is very underutilized due to its default function. 
-Capslock + Space for me takes the current clipboard and googles it.</p>
-
-<p>I never use right control, now I’ve rebound it so I can get an easy left click if I have two hands at the keyboard. Can be useful in some situations</p>
-
-<p>I’ve bound My freed up caps-lock + wheeldown / wheelup to scroll through tabs (ctrl + tab, ctrl + shift + tab). I am a tab junkie, so I find this very useful to scroll through my tabs quickly.</p>
-
-<p>Win + C opens up a calculator
-Win + N opens up notepad, but makes sure you reuse an existing notepad if you have one. Before I started using this I always ended up with my quick notes spread all over in multiple notepads. Making a mess of my notes. I have tried OneNote and Notepad++, but for some reason I still enjoy notepad (as long as it doesn’t get messy).</p>
- </p>
+        
 
       
     
@@ -355,7 +206,8 @@ Win + N opens up notepad, but makes sure you reuse an existing notepad if you ha
         <h2>
           <a class="post-link" href="/2020/04/productivity-on-windows-p3.html">Increasing productivity on Windows 10, part 2 - Chocolatey package manager</a>
         </h2>
-        <p><p>Welcome to the second part of this series on productivity in Windows 10.</p>
+        
+            <p>Welcome to the second part of this series on productivity in Windows 10.</p>
 
 <p>For this part we’ll be looking at how to install packaged programs via the command line in Windows.</p>
 
@@ -365,24 +217,8 @@ Paste in the following:
 
 <p>This will install chocolatey on your system in a one-liner.</p>
 
-<p><strong>Word of caution before you proceed</strong> - if you already have some of the programs installed through an MSI or another installer, you may face issues starting the program. The best course of action is then to uninstall either the chocolatey package or the installed program through “Add or Remove programs”.</p>
 
-<p>Also note that many of the packages chocolatey hosts are unofficial. In theory you could believe you are installing something “safe” and well known product, but there are no guarantees for this in non-official packages.</p>
-
-<p>Next, try to find a program you wish to install. 
-You can find this either with Google, searching on chocolatey.org or using the <code class="highlighter-rouge">choco find &lt;packagename&gt;</code> command</p>
-
-<p>Let’s install google chrome.</p>
-
-<p><code class="highlighter-rouge">choco install googlechrome -y</code></p>
-
-<p>Let’s list our installed chocolatey packages <code class="highlighter-rouge">choco list --local-only</code></p>
-
-<p>This works great when bootstrapping new client machines. Say you wish to have a list of programs installed with the latest versions on your machine. Create a script which runs choco install and takes a list of programs to install.</p>
-
-<p>To update your package, type <code class="highlighter-rouge">choco update &lt;packagename&gt;</code> 
-To update all your installed packages, type <code class="highlighter-rouge">choco update all</code></p>
- </p>
+        
 
       
     
@@ -411,195 +247,13 @@ To update all your installed packages, type <code class="highlighter-rouge">choc
         <h2>
           <a class="post-link" href="/2020/03/productivity-on-windows-p1.html">Increasing productivity on Windows 10, part 1 - Built-in hotkeys</a>
         </h2>
-        <p><p>I’ve decided to make a series on how to increase your productivity on Windows 10. The series will mainly be focused for people in the IT industry, but most of the articles in this series will have some carryover to all Windows users.</p>
+        
+            <p>I’ve decided to make a series on how to increase your productivity on Windows 10. The series will mainly be focused for people in the IT industry, but most of the articles in this series will have some carryover to all Windows users.</p>
 
 <p>Some of the reasoning behind this is that after starting my latest job I’ve been surrounded with people having their highly customized personal setup on Linux or MacOS. And I’ll have to say that some of the things they showed me impressed me, and I wondered if I could do the same in Windows.</p>
 
-<p>Obviously I could switch to Mac or Linux, but being a Windows user since 1998, I’ve grown quite accustomed to it. So after a few months on and off improving my productivity and general user experience on Windows 10, I thought this would be a good opportunity to share some tips, thoughts and tricks on the matter.</p>
 
-<h2>Hotkeys</h2>
-
-<p>One neat tool for learning Windows shortcuts is to install the tool <a href="https://github.com/microsoft/PowerToys">PowerToys</a>. While the program runs, holding down the Windows key for a second or so will list all available hotkeys.</p>
-
-<p>To get a full overview of most hotkeys, see <a href="https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts">here</a>. I will only be listing hotkeys I actually use my self, some more than others. I’d suggest you read what a hotkey actually accomplishes, and if it’s relevant to your or not before trying to remember the combinations.</p>
-
-<h3>Windows key combinations</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Combination</th>
-      <th>Accomplishes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Win + L</td>
-      <td>Lock your PC</td>
-    </tr>
-    <tr>
-      <td>Win + (1-9)</td>
-      <td>Open Window n from taskbar</td>
-    </tr>
-    <tr>
-      <td>Win + Shift + ArrowKey</td>
-      <td>Move current window to another monitor</td>
-    </tr>
-    <tr>
-      <td>Win + E</td>
-      <td>Open explorer</td>
-    </tr>
-    <tr>
-      <td>Win + P</td>
-      <td>Multi-monitor settings</td>
-    </tr>
-    <tr>
-      <td>Win + ,</td>
-      <td>Peek desktop background</td>
-    </tr>
-    <tr>
-      <td>Win + Ctrl + ArrowKey</td>
-      <td>Switch to next virtual desktop</td>
-    </tr>
-    <tr>
-      <td>Win + ArrowKey</td>
-      <td>Snap window</td>
-    </tr>
-    <tr>
-      <td>Win + X</td>
-      <td>Right click on Windows icon</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The top 3 hotkeys listed above are shortcuts I use multiple times every day on my machine. I only recently learned about number 2 and 3. Instead of having to aim your mouse at the top of your window, drag it to another screen and double click to maximize, I now just <code class="highlighter-rouge">Win + Shift + LeftArrow</code> or <code class="highlighter-rouge">Win + Shift + RightArrow</code></p>
-
-<p>Using the <code class="highlighter-rouge">Win + (1-9)</code> hotkey also works great, especially if you have pinned your most used programs to the taskbar. I keep my top three most used programs at the same position across all my PC’s.</p>
-
-<p>The <code class="highlighter-rouge">Win + x</code> combination is really only useful if you are willing to learn the other sub-commands you can type, e.g. <code class="highlighter-rouge">Win + x, u u</code> shut downs your computer. This isn’t for everyone, as reaching your hand away from your desktop onto the ‘off’ button seems easier to remember for some unexplainable reason.</p>
-
-<h3>Ctrl key combinations</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Combination</th>
-      <th>Accomplishes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Ctrl +  C</td>
-      <td>Copy selected item/text</td>
-    </tr>
-    <tr>
-      <td>Ctrl +  V</td>
-      <td>Paste selected item/text</td>
-    </tr>
-    <tr>
-      <td>Ctrl +  Z</td>
-      <td>Undo last</td>
-    </tr>
-    <tr>
-      <td>Ctrl +  Y</td>
-      <td>Reverse undo</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Tab</td>
-      <td>Open next tab in most programs</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift + Tab</td>
-      <td>Open previous tab in most programs</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift + Escape</td>
-      <td>Open task manager</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Alt + Delete</td>
-      <td>The great escape key</td>
-    </tr>
-    <tr>
-      <td>Ctrl +  T</td>
-      <td>Open new tab in browser</td>
-    </tr>
-    <tr>
-      <td>Ctrl +  W</td>
-      <td>Close current tab in browser</td>
-    </tr>
-    <tr>
-      <td>Ctrl + (1-9)</td>
-      <td>Open tab n in most browsers</td>
-    </tr>
-    <tr>
-      <td>Ctrl +  J</td>
-      <td>Open downloads in browser</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift +  N</td>
-      <td>Open new incognito tab in browser</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift +  T</td>
-      <td>Open last closed tab in browser</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Personally I am a tab junkie, so the built-in maneuvering between tabs with ctrl tab and ctrl shift tab gets difficult. I’ll post my setup on how to simplify “hard to reach but useful hotkeys” in a future post in this series.</p>
-
-<p>The <code class="highlighter-rouge">ctrl + shift + t</code> combination can also be used if you accidentally closed an entire window, in that case opening a new browser window and hitting the combination will bring up all closed tabs from the last session.</p>
-
-<h3>Terminal specific combinations</h3>
-
-<p>The following combinations are tested in my PowerShell console on Windows, but I know for a fact that multiple of them work on Linux as well.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Combination</th>
-      <th>Accomplishes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Ctrl + C</td>
-      <td>Stop your current command ASAP</td>
-    </tr>
-    <tr>
-      <td>Alt + .</td>
-      <td>Paste last argument from previous command</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Insert</td>
-      <td>Copy clipboard from terminal</td>
-    </tr>
-    <tr>
-      <td>Shift + Insert</td>
-      <td>Paste clipboard to terminal</td>
-    </tr>
-    <tr>
-      <td>Ctrl + R</td>
-      <td>Inline search history for your commands</td>
-    </tr>
-    <tr>
-      <td>Ctrl + LeftArrow</td>
-      <td>Jump an entire word to the left in terminal</td>
-    </tr>
-    <tr>
-      <td>Ctrl + RightArrow</td>
-      <td>Jump an entire word to the right in terminal</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>In all honesty I still use my right mouse button click to paste text, as I find the insert button “too far away” from my right hand (even though in reality my mouse is even further away for much of the time)</p>
-
-<p>The most interesting in my opinion is <code class="highlighter-rouge">Alt + .</code> Say if you are creating a directory in bash <code class="highlighter-rouge">mkdir ./very/long/path/tomyfile</code> Instead of having to copy and paste the file name, or type cd <code class="highlighter-rouge">./very/long/path/tomyfile</code> you can simply type <code class="highlighter-rouge">cd</code> and press <code class="highlighter-rouge">Alt + .</code> and hit the enter key.</p>
-
-<p>That’s a wrap for now. Stay tuned for more.</p>
- </p>
+        
 
       
     
@@ -631,7 +285,8 @@ To update all your installed packages, type <code class="highlighter-rouge">choc
         <h2>
           <a class="post-link" href="/2020/02/about-this-site.html">About this site..</a>
         </h2>
-        <p><p>Planning to eventually write some articles in one or more of the following areas:</p>
+        
+            <p>Planning to eventually write some articles in one or more of the following areas:</p>
 <ul>
   <li>Azure</li>
   <li>DevOps</li>
@@ -640,7 +295,8 @@ To update all your installed packages, type <code class="highlighter-rouge">choc
 </ul>
 
 <p>You can read more about me <a href="/about.html">here</a>.</p>
- </p>
+
+        
 
       
     
