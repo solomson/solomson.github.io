@@ -14,7 +14,7 @@ Autohotkey has been around for quite a lot of years, and is probably the most us
 
 <!--more-->
 
-My full dotfiles can be found at https://github.com/solomson/dotfiles/startup/raw
+My full dotfiles can be found <a href="https://github.com/solomson/dotfiles/startup/raw">here</a>.
 
 To begin, open up at Powershell prompt as admin `Win + X + A`
 Paste in the following: 

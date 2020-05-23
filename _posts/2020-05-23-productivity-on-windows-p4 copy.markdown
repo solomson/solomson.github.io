@@ -11,7 +11,9 @@ For this part we'll be looking at how to improve your CLI experience on Windows.
 
 To get started, first install the Windows Terminal `choco install microsoft-windows-terminal`
 
-I also recommend using PowerShell 7.x as your main shell, with a few settings. If you want to copy-paste mine, you can find them at dotfiles can be found at https://github.com/solomson/dotfiles/startup/raw , but beware that some of the settings are personalized.
+I also recommend using PowerShell 7.x as your main shell, with a few settings. If you want to copy-paste mine, you can find them at dotfiles can be found <a href="https://github.com/solomson/dotfiles/startup/raw">here</a>, but beware that some of the settings are personalized.
+
+
 
 <!--more-->
 The end result will look something like this, given that you have the correct modules installed:
