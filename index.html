@@ -33,7 +33,11 @@ title: Home
         </h2>
         {% if post.excerpt %}
             {{ post.excerpt }}
+                    <a href="{{ post.url | prepend: site.baseurl }}">Read more..</a>
+                    <br>
+                    <br>
         {% endif %}
+
 
       {% if post %}
         {% assign tags = post.tags %}
