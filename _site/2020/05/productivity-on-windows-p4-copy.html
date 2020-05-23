@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+
+<html>
+	<head>
+		<title>Audun Solemdal - thoughts on tech  </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="shortcut icon" type="image/png" href="/favicon.png">
+		<meta name="google-site-verification" content="pTUkCWb_kAda0PRYBi5XjVr9pRM4T-UsVGXizAGA1w8" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="toggle-btn" onclick="toggleHeader()">
+				<span></span>
+				<span></span>
+				<span class="margin"></span>
+			</div>
+				<div class="inner">
+					<div id="collapse">
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong class="liquid">I am Audun</strong></h1> <br />
+					<p class="liquid">I work in the realms of
+					Azure and DevOps.
+					</p>
+					<br />
+					<br class="liquid" />
+					<br class="liquid" />
+					
+					
+					 
+						
+					
+					<h4><a class="liquid" href="/about">About</a></h4>
+					
+				  
+					
+					 
+						 
+							
+					
+					 
+						
+					
+					<h4><a class="liquid" href="/external-cv">CV</a></h4>
+					
+				  
+					
+					
+				  
+					
+					 
+						
+					
+					<h4><a class="liquid" href="/">Home</a></h4>
+					
+				  
+					
+					
+				  
+					
+					
+				  
+					
+					 
+						 
+							
+					
+					
+				  
+					
+					
+				  
+				</div>
+				</div>
+			</header>
+
+			<div class="trigger">
+
+			  </div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2 class="post-title">Increasing productivity on Windows 10, part 4 - CLI</h2>
+						</header>
+					</section>
+
+			<div class="post-content">
+				<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+
+  <div class="post-content" itemprop="articleBody">
+    <p>For this part we’ll be looking at how to improve your CLI experience on Windows.</p>
+
+<p>To get started, first install the Windows Terminal <code class="highlighter-rouge">choco install microsoft-windows-terminal</code></p>
+
+<p>I also recommend using PowerShell 7.x as your main shell, with a few settings. If you want to copy-paste mine, you can find them at dotfiles can be found at https://github.com/solomson/dotfiles/startup/raw , but beware that some of the settings are personalized.</p>
+
+<p>The end result will look something like this, given that you have the correct modules installed:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>posh-git
+oh-my-posh + Paradox Theme
+PSReadLine version 2.1.0-beta1 or higher
+</code></pre></div></div>
+
+<p><img src="/assets/img/2020-05-23-1.png" /></p>
+
+<p>To install the modules, use the Install-Module cmdlet. for pre-releases, use the <code class="highlighter-rouge">-AllowPrerelease</code> switch parameter.</p>
+
+<p>I also recommend installing WSL (Windows Subsystem for Linux) on your machine. This allows you to use linux utils interchangeably in your shell, or having different tabs running either on your Windows host, or in a Linux distro of your choice. WSL2 is set to be released with Windows 10 2004 in the end of May with further improvements.
+For your Linux CLI I recommend using zsh together with the autosugesstions plugin. zsh is more or less compatible with bash, but adds some extra extensions (as far as my understanding goes).</p>
+
+<p>I’ll likely go into more detail on how to get started with WSL in another article. Personally I mostly deal with bash/sh on Linux due to de facto Linux standards.</p>
+
+<p>Moving back to Windows and PowerShell. What I love about PowerShell is its syntax consistency, tab-autocompletion and modular approach. Last but not least, in PowerShell you deal with objects rather than string manipulation.</p>
+
+<p>Let’s use a more or less useless example:</p>
+
+<p><code class="highlighter-rouge">Get-Process | Where-Object -Property Name -eq "AutoHotkey" | Select-Object -Property Name</code></p>
+
+<p>Given the example from someone with experience with either SQL or programming (ideally both), it is simple to understand what we are doing with the above command. We do not have to be so verbose about it, but for scripts and maintainability, reading comprehension should be prioritized over letters typed in my opinion. Using the CLI, we can achieve the same thing with fewer keystrokes using the following command:</p>
+
+<p><code class="highlighter-rouge">ps | where Name -eq "autohotkey" | select name</code></p>
+
+<p>The above command uses the “ps” alias for Get-Process, and uses positional parameter values so that we don’t have to specify the <code class="highlighter-rouge">-Property</code> flags.</p>
+
+<p>How do to this in sh/bash?</p>
+
+<p><code class="highlighter-rouge">ps | grep autohotkey | awk ...</code></p>
+
+<p>Since sh is text based rather than object based, you can’t just ask for properties, you have to use awk to manipulate the string based on the input sent through the pipeline. Naturally there will be some bash wizards out there, but for a regular CLI user, both “guessing” what the correct command for the task is based on consistent naming + having consistent parameters, properties is just a far simpler way to deal with this without having to dig in deep.</p>
+
+<p>One of my main use cases for PowerShell is dealing with tasks which are either time consuming, error prone or simply not possible with point and click.</p>
+
+<p>Let me show just a simple use-case where I create a mailing list based on AAD group membership</p>
+
+<p><code class="highlighter-rouge">Get-AzADGroup -DisplayName "MyAADGroupName" | Get-AzADGroupMember | select -Property UserPrincipalName | ForEach-Object { echo ($_.UserPrincipalName +";")  } | Set-Clipboard</code></p>
+
+<p>Now simply open up Outlook, paste your clipboard into the Bcc. section and type your email. (Note that Outlook currently has a limit of 500 recipients per email)</p>
+
+
+  </div>
+
+</article>
+<hr class="tight">
+
+<div class="post-categories">
+  
+
+  <i class="fas fa-folder-open"></i>
+  
+  <a href="/categories/#Windows">Windows</a>
+  
+  
+  
+  <br>
+
+<i class="fas fa-tags"></i> 
+  
+  <a href="/tags/#Windows">Windows</a>
+  &nbsp;
+  
+  <a href="/tags/#Productivity">Productivity</a>
+  &nbsp;
+  
+  <a href="/tags/#PowerShell">PowerShell</a>
+  &nbsp;
+  
+  <a href="/tags/#WSL">WSL</a>
+  
+  
+</div>
+<hr class="tight">
+				</div>
+
+			</div>
+				
+		<!-- Footer -->
+
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="//www.github.com/solomson" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="//www.linkedin.com/in/audun-solemdal/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="mailto:audunlsolemdal@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="/" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
+					<ul class="copyright" >
+						<li class="liquid">by Audun Solemdal</li><li class="liquid"></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.poptrox.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+			<script src="/assets/js/sidebar.js"></script>
+			<script src="/assets/js/search.js"></script>
+
+	</body>
+</html>

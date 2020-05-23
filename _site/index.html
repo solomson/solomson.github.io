@@ -115,6 +115,235 @@
   <ul class="post-list">
     
       <li>
+        <span class="post-meta">May 23, 2020</span>
+        
+           in
+        
+        <a href="/categories/#Windows"> Windows</a>
+        
+        
+
+        <h2>
+          <a class="post-link" href="/2020/05/productivity-on-windows-p4-copy.html">Increasing productivity on Windows 10, part 4 - CLI</a>
+        </h2>
+        <p><p>For this part we’ll be looking at how to improve your CLI experience on Windows.</p>
+
+<p>To get started, first install the Windows Terminal <code class="highlighter-rouge">choco install microsoft-windows-terminal</code></p>
+
+<p>I also recommend using PowerShell 7.x as your main shell, with a few settings. If you want to copy-paste mine, you can find them at dotfiles can be found at https://github.com/solomson/dotfiles/startup/raw , but beware that some of the settings are personalized.</p>
+
+<p>The end result will look something like this, given that you have the correct modules installed:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>posh-git
+oh-my-posh + Paradox Theme
+PSReadLine version 2.1.0-beta1 or higher
+</code></pre></div></div>
+
+<p><img src="/assets/img/2020-05-23-1.png" /></p>
+
+<p>To install the modules, use the Install-Module cmdlet. for pre-releases, use the <code class="highlighter-rouge">-AllowPrerelease</code> switch parameter.</p>
+
+<p>I also recommend installing WSL (Windows Subsystem for Linux) on your machine. This allows you to use linux utils interchangeably in your shell, or having different tabs running either on your Windows host, or in a Linux distro of your choice. WSL2 is set to be released with Windows 10 2004 in the end of May with further improvements.
+For your Linux CLI I recommend using zsh together with the autosugesstions plugin. zsh is more or less compatible with bash, but adds some extra extensions (as far as my understanding goes).</p>
+
+<p>I’ll likely go into more detail on how to get started with WSL in another article. Personally I mostly deal with bash/sh on Linux due to de facto Linux standards.</p>
+
+<p>Moving back to Windows and PowerShell. What I love about PowerShell is its syntax consistency, tab-autocompletion and modular approach. Last but not least, in PowerShell you deal with objects rather than string manipulation.</p>
+
+<p>Let’s use a more or less useless example:</p>
+
+<p><code class="highlighter-rouge">Get-Process | Where-Object -Property Name -eq "AutoHotkey" | Select-Object -Property Name</code></p>
+
+<p>Given the example from someone with experience with either SQL or programming (ideally both), it is simple to understand what we are doing with the above command. We do not have to be so verbose about it, but for scripts and maintainability, reading comprehension should be prioritized over letters typed in my opinion. Using the CLI, we can achieve the same thing with fewer keystrokes using the following command:</p>
+
+<p><code class="highlighter-rouge">ps | where Name -eq "autohotkey" | select name</code></p>
+
+<p>The above command uses the “ps” alias for Get-Process, and uses positional parameter values so that we don’t have to specify the <code class="highlighter-rouge">-Property</code> flags.</p>
+
+<p>How do to this in sh/bash?</p>
+
+<p><code class="highlighter-rouge">ps | grep autohotkey | awk ...</code></p>
+
+<p>Since sh is text based rather than object based, you can’t just ask for properties, you have to use awk to manipulate the string based on the input sent through the pipeline. Naturally there will be some bash wizards out there, but for a regular CLI user, both “guessing” what the correct command for the task is based on consistent naming + having consistent parameters, properties is just a far simpler way to deal with this without having to dig in deep.</p>
+
+<p>One of my main use cases for PowerShell is dealing with tasks which are either time consuming, error prone or simply not possible with point and click.</p>
+
+<p>Let me show just a simple use-case where I create a mailing list based on AAD group membership</p>
+
+<p><code class="highlighter-rouge">Get-AzADGroup -DisplayName "MyAADGroupName" | Get-AzADGroupMember | select -Property UserPrincipalName | ForEach-Object { echo ($_.UserPrincipalName +";")  } | Set-Clipboard</code></p>
+
+<p>Now simply open up Outlook, paste your clipboard into the Bcc. section and type your email. (Note that Outlook currently has a limit of 500 recipients per email)</p>
+
+ </p>
+
+      
+    
+    <i class="fas fa-tags"></i> 
+      
+      <a href="/tags/#Windows">Windows</a>
+      &nbsp;
+      
+      <a href="/tags/#Productivity">Productivity</a>
+      &nbsp;
+      
+      <a href="/tags/#PowerShell">PowerShell</a>
+      &nbsp;
+      
+      <a href="/tags/#WSL">WSL</a>
+      
+      
+
+
+        <hr class="untight">
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 24, 2020</span>
+        
+           in
+        
+        <a href="/categories/#Windows"> Windows</a>
+        
+        
+
+        <h2>
+          <a class="post-link" href="/2020/04/productivity-on-windows-p2.html">Increasing productivity on Windows 10, part 3 - AutoHotKey</a>
+        </h2>
+        <p><p>Welcome to the third part of this series on productivity in Windows 10.</p>
+
+<p>For this part we’ll be looking at how to create custom keybindings and macros on Windows.</p>
+
+<p>Autohotkey has been around for quite a lot of years, and is probably the most used macro tool on Windows. I remember first encountering the tool in 2010 to rebind some commands in GTA San Andreas multiplayer to button combinations. For this article I’ll showcase parts of my dotfiles and explain how I use them. Hopefully you can also get some inspiration from this too.</p>
+
+<p>My full dotfiles can be found at https://github.com/solomson/dotfiles/startup/raw</p>
+
+<p>To begin, open up at Powershell prompt as admin <code class="highlighter-rouge">Win + X + A</code>
+Paste in the following:
+<code class="highlighter-rouge">choco install autohotkey -y</code></p>
+
+<p>This will install autohotkey on your system in a one-liner.</p>
+
+<p>The way to use autohotkey is to create an .ahk file and run it. As you want keybindings to be consistent, it makes sense to put them into your startup folder.
+To go to your startup folder, simply open Windows explorer, <code class="highlighter-rouge">Win + E</code> and type <code class="highlighter-rouge">shell:startup</code> in the menu bar. Once you are satisfied with your file, drag it here.</p>
+
+<p>My current keybinds.ahk file</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#SingleInstance force
+
+; Default state of lock keys
+SetCapsLockState, AlwaysOff
+SetScrollLockState, AlwaysOff
+return
+
+; Suspend AutoHotKey
+CapsLock &amp; p::Suspend ; 
+return
+
+; Always on Top
+^SPACE:: Winset, Alwaysontop, , A ; ctrl + space
+Return
+
+; Google Search highlighted text
+CapsLock &amp; Space::
+{
+    Send, ^c
+    Sleep 50
+    Run, http://www.google.com/search?q=%clipboard%
+    Return
+}
+
+; Rebind useless key to braces
++|::
+{
+    Send, {RAlt Down}{7}{RAlt Up} 
+    Send, {RAlt Down}{0}{RAlt Up}
+    return
+}
+
+
+; Scroll tab forward (chrome) 
+CapsLock &amp; WheelDown::
+{
+    Send ^{Tab}
+    sleep 50
+    return
+}
+
+; Scroll tab back (chrome)
+CapsLock &amp; WheelUp::
+{
+    Send, ^+{Tab}
+    sleep 50
+    return
+}
+
+; Cleanup for calculators
+#c::
+if WinExist("Kalkulator") || if WinExist("Calculator")
+{
+    WinActivate  ; Automatically uses the window found above.
+    Send, {Escape}
+    Send, {Enter}
+    return
+}
+else 
+{
+   ; Run, calc.exe
+    return
+}
+
+#n::
+if WinExist("Untitled - Notepad") || if WinExist("*Untitled - Notepad")
+{
+    WinActivate  ; Automatically uses the window found above.
+    Send, {Enter}
+    Send, {Enter}
+    return
+}
+else 
+{
+    Run, notepad.exe
+    return
+}
+
+; Unused F keys
+
+
+; Mouse click with useless key (right ctrl)
+RCtrl::
+{
+    Click
+    Return
+}
+</code></pre></div></div>
+
+<p>Notice that I’ve disabled my capslock key, and instead use it as a function key. CapsLock is placed at a great place to use for your pinky finger, and is very underutilized due to its default function. 
+Capslock + Space for me takes the current clipboard and googles it.</p>
+
+<p>I never use right control, now I’ve rebound it so I can get an easy left click if I have two hands at the keyboard. Can be useful in some situations</p>
+
+<p>I’ve bound My freed up caps-lock + wheeldown / wheelup to scroll through tabs (ctrl + tab, ctrl + shift + tab). I am a tab junkie, so I find this very useful to scroll through my tabs quickly.</p>
+
+<p>Win + C opens up a calculator
+Win + N opens up notepad, but makes sure you reuse an existing notepad if you have one. Before I started using this I always ended up with my quick notes spread all over in multiple notepads. Making a mess of my notes. I have tried OneNote and Notepad++, but for some reason I still enjoy notepad (as long as it doesn’t get messy).</p>
+ </p>
+
+      
+    
+    <i class="fas fa-tags"></i> 
+      
+      <a href="/tags/#Windows">Windows</a>
+      &nbsp;
+      
+      <a href="/tags/#Productivity">Productivity</a>
+      
+      
+
+
+        <hr class="untight">
+      </li>
+    
+      <li>
         <span class="post-meta">Apr 13, 2020</span>
         
            in
@@ -124,7 +353,7 @@
         
 
         <h2>
-          <a class="post-link" href="/2020/04/productivity-on-windows-p2.html">Increasing productivity on Windows 10, part 2 - Chocolatey package manager</a>
+          <a class="post-link" href="/2020/04/productivity-on-windows-p3.html">Increasing productivity on Windows 10, part 2 - Chocolatey package manager</a>
         </h2>
         <p><p>Welcome to the second part of this series on productivity in Windows 10.</p>
 

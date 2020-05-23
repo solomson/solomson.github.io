@@ -1,10 +1,26 @@
 [
   
     {
-      "title"    : "Increasing productivity on Windows 10, part 2 - Chocolatey package manager",
+      "title"    : "Increasing productivity on Windows 10, part 4 - CLI",
+      "category" : "",
+      "tags"     : "Windows, Productivity, PowerShell, WSL",
+      "url"      : "/2020/05/productivity-on-windows-p4-copy.html",
+      "date"     : "2020-05-23 13:40:00 +0200"
+    } ,
+  
+    {
+      "title"    : "Increasing productivity on Windows 10, part 3 - AutoHotKey",
       "category" : "",
       "tags"     : "Windows, Productivity",
       "url"      : "/2020/04/productivity-on-windows-p2.html",
+      "date"     : "2020-04-24 20:10:00 +0200"
+    } ,
+  
+    {
+      "title"    : "Increasing productivity on Windows 10, part 2 - Chocolatey package manager",
+      "category" : "",
+      "tags"     : "Windows, Productivity",
+      "url"      : "/2020/04/productivity-on-windows-p3.html",
       "date"     : "2020-04-13 12:40:00 +0200"
     } ,
   
