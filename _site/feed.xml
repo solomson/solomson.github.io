@@ -4,10 +4,10 @@
     <title>Tech blog by Audun Solemdal</title>
     <description>Blog posts on Azure, DevOps, Kubernetes and Cloud native
 </description>
-    <link>http://localhost:4002/</link>
-    <atom:link href="http://localhost:4002/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 23 May 2020 15:00:32 +0200</pubDate>
-    <lastBuildDate>Sat, 23 May 2020 15:00:32 +0200</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 12 Jun 2020 23:07:25 +0200</pubDate>
+    <lastBuildDate>Fri, 12 Jun 2020 23:07:25 +0200</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -63,8 +63,8 @@ For your Linux CLI I recommend using zsh together with the autosugesstions plugi
 
 </description>
         <pubDate>Sat, 23 May 2020 13:40:00 +0200</pubDate>
-        <link>http://localhost:4002/2020/05/productivity-on-windows-p4-copy.html</link>
-        <guid isPermaLink="true">http://localhost:4002/2020/05/productivity-on-windows-p4-copy.html</guid>
+        <link>http://localhost:4000/2020/05/productivity-on-windows-p4-copy.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/05/productivity-on-windows-p4-copy.html</guid>
         
         <category>Windows</category>
         
@@ -202,8 +202,8 @@ Capslock + Space for me takes the current clipboard and googles it.&lt;/p&gt;
 Win + N opens up notepad, but makes sure you reuse an existing notepad if you have one. Before I started using this I always ended up with my quick notes spread all over in multiple notepads. Making a mess of my notes. I have tried OneNote and Notepad++, but for some reason I still enjoy notepad (as long as it doesn’t get messy).&lt;/p&gt;
 </description>
         <pubDate>Fri, 24 Apr 2020 20:10:00 +0200</pubDate>
-        <link>http://localhost:4002/2020/04/productivity-on-windows-p2.html</link>
-        <guid isPermaLink="true">http://localhost:4002/2020/04/productivity-on-windows-p2.html</guid>
+        <link>http://localhost:4000/2020/04/productivity-on-windows-p2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/productivity-on-windows-p2.html</guid>
         
         <category>Windows</category>
         
@@ -247,8 +247,8 @@ You can find this either with Google, searching on chocolatey.org or using the &
 To update all your installed packages, type &lt;code class=&quot;highlighter-rouge&quot;&gt;choco update all&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 13 Apr 2020 12:40:00 +0200</pubDate>
-        <link>http://localhost:4002/2020/04/productivity-on-windows-p3.html</link>
-        <guid isPermaLink="true">http://localhost:4002/2020/04/productivity-on-windows-p3.html</guid>
+        <link>http://localhost:4000/2020/04/productivity-on-windows-p3.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/04/productivity-on-windows-p3.html</guid>
         
         <category>Windows</category>
         
@@ -453,8 +453,8 @@ To update all your installed packages, type &lt;code class=&quot;highlighter-rou
 &lt;p&gt;That’s a wrap for now. Stay tuned for more.&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Mar 2020 20:25:00 +0100</pubDate>
-        <link>http://localhost:4002/2020/03/productivity-on-windows-p1.html</link>
-        <guid isPermaLink="true">http://localhost:4002/2020/03/productivity-on-windows-p1.html</guid>
+        <link>http://localhost:4000/2020/03/productivity-on-windows-p1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/03/productivity-on-windows-p1.html</guid>
         
         <category>Windows</category>
         
@@ -480,8 +480,8 @@ To update all your installed packages, type &lt;code class=&quot;highlighter-rou
 &lt;p&gt;You can read more about me &lt;a href=&quot;/about.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sat, 29 Feb 2020 11:43:22 +0100</pubDate>
-        <link>http://localhost:4002/2020/02/about-this-site.html</link>
-        <guid isPermaLink="true">http://localhost:4002/2020/02/about-this-site.html</guid>
+        <link>http://localhost:4000/2020/02/about-this-site.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/02/about-this-site.html</guid>
         
         <category>Info</category>
         
