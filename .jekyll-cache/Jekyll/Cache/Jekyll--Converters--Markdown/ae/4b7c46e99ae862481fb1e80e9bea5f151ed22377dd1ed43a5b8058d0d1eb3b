@@ -1,7 +1,0 @@
-I"1<p>Welcome to the third part of this series on productivity in Windows 10.</p>
-
-<p>For this part we’ll be looking at how to create custom keybindings and macros on Windows.</p>
-
-<p>Autohotkey has been around for quite a lot of years, and is probably the most used macro tool on Windows. I remember first encountering the tool in 2010 to rebind some commands in GTA San Andreas multiplayer to button combinations. For this article I’ll showcase parts of my dotfiles and explain how I use them. Hopefully you can also get some inspiration from this too.</p>
-
-:ET
