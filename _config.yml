@@ -11,9 +11,9 @@ email: audunlsolemdal@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Blog posts on Azure, DevOps, Kubernetes and Cloud native
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://solomson.github.io" # the base hostname & protocol for your site
+url: "https://audunsolemdal.github.io" # the base hostname & protocol for your site
 twitter_username: ASolemdal
-github_username:  solomson
+github_username:  audunsolemdal
 permalink: /:year/:month/:title.html
 excerpt_separator: "<!--more-->" # Use excerpts on front page
 
